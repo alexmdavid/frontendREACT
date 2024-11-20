@@ -1,0 +1,97 @@
+/* Estilo global para .ver-rutas-container */
+.ver-rutas-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .ver-rutas-container h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-top: 20px;
+    font-size: 36px;
+  }
+  
+  .ver-rutas-container table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .ver-rutas-container thead {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .ver-rutas-container th,
+  .ver-rutas-container td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .ver-rutas-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .ver-rutas-container th {
+    font-size: 18px;
+  }
+  
+  .ver-rutas-container td {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .ver-rutas-container tr:hover {
+    background-color: #e9f7e5;
+  }
+  
+  .ver-rutas-container p {
+    text-align: center;
+    color: #d9534f;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .ver-rutas-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px auto;
+    display: block;
+    width: 200px;
+  }
+  
+  .ver-rutas-container button:hover {
+    background-color: #45a049;
+  }
+  
+  @media (max-width: 768px) {
+    .ver-rutas-container table {
+      width: 100%;
+    }
+  
+    .ver-rutas-container th,
+    .ver-rutas-container td {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .ver-rutas-container h1 {
+      font-size: 28px;
+    }
+  }
+  

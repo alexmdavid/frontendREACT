@@ -1,0 +1,147 @@
+/* Reset general para márgenes y paddings */
+
+
+/* Estilo global para el body */
+body.login-view {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('../img/paisaje.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
+
+/* Estilo para el contenedor del formulario */
+body.login-view .container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 12px;
+  width: 380px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  margin: auto; /* Asegura que el contenedor esté centrado */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Título */
+body.login-view h1 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Estilo para los grupos de entrada (inputs) */
+body.login-view .input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+body.login-view .input-group label {
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+body.login-view .input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+body.login-view .input-group input:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
+}
+
+/* Estilo para el botón */
+body.login-view button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  background-color: #14DB4F;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+body.login-view button:hover {
+  background-color: #34d163;
+  transform: translateY(-2px);
+}
+
+body.login-view button:active {
+  transform: translateY(1px);
+}
+
+/* Estilo para los enlaces */
+body.login-view a {
+  display: block;
+  color: #1e90ff;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+body.login-view a:hover {
+  color: #128C3C;
+}
+
+body.login-view .links {
+  margin-top: 20px;
+}
+
+body.login-view small {
+  color: #e74c3c;
+  font-size: 14px;
+  display: none;
+}
+
+/* Responsividad para dispositivos móviles */
+@media (max-width: 480px) {
+  body.login-view .container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  body.login-view h1 {
+    font-size: 24px;
+  }
+
+  body.login-view input,
+  body.login-view button {
+    font-size: 16px;
+  }
+
+  body.login-view a {
+    font-size: 14px;
+  }
+}

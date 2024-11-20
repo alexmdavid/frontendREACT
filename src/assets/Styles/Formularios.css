@@ -1,0 +1,424 @@
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo global para .registrar-torneo-container */
+  .registrar-torneo-container {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px; /* Añade un poco de padding para evitar que el contenido toque los bordes */
+  }
+  
+  .registrar-torneo-container .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .registrar-torneo-container h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .registrar-torneo-container .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .registrar-torneo-container label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  
+  .registrar-torneo-container input[type="number"],
+  .registrar-torneo-container input[type="text"],
+  .registrar-torneo-container textarea,
+  .registrar-torneo-container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .registrar-torneo-container input[type="number"]:focus,
+  .registrar-torneo-container input[type="text"]:focus,
+  .registrar-torneo-container textarea:focus,
+  .registrar-torneo-container select:focus {
+    border-color: #4CAF50;
+    background-color: #f1fdf2;
+    outline: none;
+  }
+  
+  .registrar-torneo-container textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  .registrar-torneo-container button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .registrar-torneo-container button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .registrar-torneo-container button:active {
+    transform: translateY(1px);
+  }
+  
+  .registrar-torneo-container button:focus {
+    outline: none;
+  }
+  
+  /* Estilos adicionales para elementos opcionales */
+  .registrar-torneo-container input[type="text"]::placeholder,
+  .registrar-torneo-container textarea::placeholder {
+    color: #bbb;
+  }
+  
+  .registrar-torneo-container input[type="text"]:disabled,
+  .registrar-torneo-container textarea:disabled {
+    background-color: #e6e6e6;
+    cursor: not-allowed;
+  }
+  
+  .registrar-torneo-container .form-group:last-child {
+    margin-bottom: 0;
+  }
+  
+  .registrar-torneo-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="0,0 20,0 10,10" fill="%23333" /></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 12px;
+    padding-right: 30px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 480px) {
+    .registrar-torneo-container form {
+      padding: 20px;
+    }
+  
+    .registrar-torneo-container h1 {
+      font-size: 20px;
+    }
+  
+    .registrar-torneo-container button {
+      font-size: 14px;
+    }
+  }
+  
+  /* Estilo global para .agregar-ruta-container */
+  .agregar-ruta-container {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px; /* Añade un poco de padding para evitar que el contenido toque los bordes */
+  }
+  
+  .agregar-ruta-container .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .agregar-ruta-container h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .agregar-ruta-container .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .agregar-ruta-container label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  
+  .agregar-ruta-container input[type="number"],
+  .agregar-ruta-container input[type="text"],
+  .agregar-ruta-container textarea,
+  .agregar-ruta-container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .agregar-ruta-container input[type="number"]:focus,
+  .agregar-ruta-container input[type="text"]:focus,
+  .agregar-ruta-container textarea:focus,
+  .agregar-ruta-container select:focus {
+    border-color: #4CAF50;
+    background-color: #f1fdf2;
+    outline: none;
+  }
+  
+  .agregar-ruta-container textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  .agregar-ruta-container button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .agregar-ruta-container button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .agregar-ruta-container button:active {
+    transform: translateY(1px);
+  }
+  
+  .agregar-ruta-container button:focus {
+    outline: none;
+  }
+  
+  /* Estilos adicionales para elementos opcionales */
+  .agregar-ruta-container input[type="text"]::placeholder,
+  .agregar-ruta-container textarea::placeholder {
+    color: #bbb;
+  }
+  
+  .agregar-ruta-container input[type="text"]:disabled,
+  .agregar-ruta-container textarea:disabled {
+    background-color: #e6e6e6;
+    cursor: not-allowed;
+  }
+  
+  .agregar-ruta-container .form-group:last-child {
+    margin-bottom: 0;
+  }
+  
+  .agregar-ruta-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="0,0 20,0 10,10" fill="%23333" /></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 12px;
+    padding-right: 30px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 480px) {
+    .agregar-ruta-container form {
+      padding: 20px;
+    }
+  
+    .agregar-ruta-container h1 {
+      font-size: 20px;
+    }
+  
+    .agregar-ruta-container button {
+      font-size: 14px;
+    }
+  }
+  
+  /* Estilo global para .agregar-grupo-container */
+  .agregar-grupo-container {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px; /* Añade un poco de padding para evitar que el contenido toque los bordes */
+  }
+  
+  .agregar-grupo-container .form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .agregar-grupo-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .agregar-grupo-container .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .agregar-grupo-container label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  
+  .agregar-grupo-container input[type="number"],
+  .agregar-grupo-container input[type="text"],
+  .agregar-grupo-container textarea,
+  .agregar-grupo-container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .agregar-grupo-container input[type="number"]:focus,
+  .agregar-grupo-container input[type="text"]:focus,
+  .agregar-grupo-container textarea:focus,
+  .agregar-grupo-container select:focus {
+    border-color: #4CAF50;
+    background-color: #f1fdf2;
+    outline: none;
+  }
+  
+  .agregar-grupo-container textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  .agregar-grupo-container button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .agregar-grupo-container button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .agregar-grupo-container button:active {
+    transform: translateY(1px);
+  }
+  
+  .agregar-grupo-container button:focus {
+    outline: none;
+  }
+  
+  /* Estilos adicionales para elementos opcionales */
+  .agregar-grupo-container input[type="text"]::placeholder,
+  .agregar-grupo-container textarea::placeholder {
+    color: #bbb;
+  }
+  
+  .agregar-grupo-container input[type="text"]:disabled,
+  .agregar-grupo-container textarea:disabled {
+    background-color: #e6e6e6;
+    cursor: not-allowed;
+  }
+  
+  .agregar-grupo-container .form-group:last-child {
+    margin-bottom: 0;
+  }
+  
+  .agregar-grupo-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="0,0 20,0 10,10" fill="%23333" /></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 12px;
+    padding-right: 30px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 480px) {
+    .agregar-grupo-container form {
+      padding: 20px;
+    }
+  
+    .agregar-grupo-container h2 {
+      font-size: 20px;
+    }
+  
+    .agregar-grupo-container button {
+      font-size: 14px;
+    }
+  }
+  
