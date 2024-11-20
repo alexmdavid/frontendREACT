@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/Styles/Home.css'; // Asegúrate de que la ruta de la hoja de estilo sea correcta
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function HomeUser() {
   const navigate = useNavigate();
