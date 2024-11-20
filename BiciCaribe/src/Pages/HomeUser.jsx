@@ -90,11 +90,7 @@ export default function HomeUser() {
             </button>
           </li>
           <li>
-            <a
-            className="fa-brands fa-facebook fa-xl"
-            href="https://laberinto-bicicaribe.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a href="https://laberinto-bicicaribe.vercel.app/"
           ><button> JUEGO </button></a>
           </li>
         </ul>
