@@ -81,6 +81,10 @@ export default function HomeUser() {
 
           <li><a onClick={() => navigate('/usuarios')} href="#">VER USUARIOS</a></li>
           <li><a onClick={() => navigate('/contact')} href="#">CONTACTANOS</a></li>
+          <li>
+            <a href="https://laberinto-bicicaribe.vercel.app/"
+          ><button> JUEGO </button></a>
+          </li>
         </ul>
       </nav>
 
