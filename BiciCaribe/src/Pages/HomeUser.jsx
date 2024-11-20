@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/Styles/Home.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function HomeUser() {
   const navigate = useNavigate();
@@ -32,7 +35,7 @@ export default function HomeUser() {
           <a className="fa-brands fa-twitter fa-xl"></a>
         </div>
         <div className="auth-buttons">
-          <button className="login-btn" onClick={handleProfileRedirect}>
+          <button className="login-btn" onClick={() => navigate ('/VerPerfil')}>
             Mi perfil
           </button>
         </div>
@@ -51,7 +54,7 @@ export default function HomeUser() {
             </button>
             <ul className="dropdown-menu">
               <li>
-                <button type="button" onClick={() => navigate('/rutas')}>
+                <button type="button" onClick={() => navigate('/VerRutas')}>
                   Ver Rutas
                 </button>
               </li>
@@ -85,6 +88,14 @@ export default function HomeUser() {
             <button type="button" onClick={() => navigate('/contact')}>
               CONTACTANOS
             </button>
+          </li>
+          <li>
+            <a
+            className="fa-brands fa-facebook fa-xl"
+            href="https://laberinto-bicicaribe.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          ><button> JUEGO </button></a>
           </li>
         </ul>
       </nav>
