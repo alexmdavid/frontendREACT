@@ -1,0 +1,126 @@
+/* Reset general para márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global para el body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('paisaje.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Estilo para el contenedor del formulario */
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo más limpio */
+    padding: 40px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* Título */
+h2 {
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Estilo para los grupos de entrada (inputs) */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Estilo de los campos de entrada */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #555;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.3); /* Efecto de sombra azul */
+}
+
+/* Estilo para el botón */
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background-color: #14DB4F;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #34d163;
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+button:active {
+    transform: translateY(1px); /* Efecto de presionar el botón */
+}
+
+/* Estilo para los mensajes de error */
+small {
+    color: #e74c3c;
+    font-size: 14px;
+    display: none;
+    margin-top: 5px;
+}
+
+.error input, .error textarea {
+    border-color: #e74c3c;
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.4); /* Sombra roja */
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input, textarea, button {
+        font-size: 16px;
+    }
+}

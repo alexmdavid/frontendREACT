@@ -14,10 +14,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url('paisaje.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+}
+
+#login{
+    background-image: url('../img/paisaje.jpg');
 }
 
 
@@ -29,6 +29,9 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px); /* Efecto de desenfoque de fondo */
     text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 

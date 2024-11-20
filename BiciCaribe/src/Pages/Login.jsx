@@ -3,7 +3,7 @@ import '../assets/Styles/Login.css'
 
 export default function login() {
   return (
-    <div className="container">
+    <div className="container" id='login'>
             <h1>Iniciar Sesión</h1>
             <br />
             <form method="POST" action="UsuarioControlador?action=login">
