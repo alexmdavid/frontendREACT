@@ -37,7 +37,7 @@ export default function HomeUser() {
           <a className="fa-brands fa-twitter fa-xl"></a>
         </div>
         <div className="auth-buttons">
-          <button className="login-btn" onClick={handleProfileRedirect}>
+          <button className="login-btn" onClick={() => navigate('/VerPerfil')}>
             Mi perfil
           </button>
         </div>
@@ -53,7 +53,7 @@ export default function HomeUser() {
           <li className="dropdown">
             <a href="#">RUTAS <i className="fa fa-chevron-down"></i></a>
             <ul className="dropdown-menu">
-              <li><a onClick={() => navigate('/rutas')} href="#">Ver Ruta</a></li>
+              <li><a onClick={() => navigate('/VerRutas')} href="#">Ver Ruta</a></li>
               <li><a onClick={() => navigate('/rutas/registrar')} href="#">Registrar Ruta</a></li>
             </ul>
           </li>
@@ -63,7 +63,7 @@ export default function HomeUser() {
             <a href="#">GRUPOS DE SALIDA <i className="fa fa-chevron-down"></i></a>
             <ul className="dropdown-menu">
               <li><a onClick={() => navigate('/grupos')} href="#">Ver Grupos</a></li>
-              <li><a onClick={() => navigate('/grupos/registrar')} href="#">Registrar Grupo</a></li>
+              <li><a onClick={() => navigate('/grupos/registro')} href="#">Registrar Grupo</a></li>
             </ul>
           </li>
 
@@ -72,7 +72,7 @@ export default function HomeUser() {
             <a href="#">TORNEOS <i className="fa fa-chevron-down"></i></a>
             <ul className="dropdown-menu">
               <li><a onClick={() => navigate('/torneos')} href="#">Ver Torneos</a></li>
-              <li><a onClick={() => navigate('/torneos/registrar')} href="#">Registrar Torneo</a></li>
+              <li><a onClick={() => navigate('/registro/torneo')} href="#">Registrar Torneo</a></li>
             </ul>
           </li>
 
