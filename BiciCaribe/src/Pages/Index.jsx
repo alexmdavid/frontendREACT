@@ -1,4 +1,5 @@
 import React from 'react'
+import '../assets/Styles/Index.css'
 
 export default function Index() {
     return (
