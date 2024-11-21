@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/Styles/Formularios.css'; 
+import axios from 'axios';
 
 export default function AgregarGrupo() {
   const [formData, setFormData] = useState({

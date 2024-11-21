@@ -4,6 +4,7 @@ import '../assets/Styles/Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 export default function HomeUser() {
   const navigate = useNavigate();

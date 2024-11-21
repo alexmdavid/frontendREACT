@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/Styles/ListarGrupos.css';
+import axios from 'axios';
 
 export default function ListadoTorneos() {
   const [torneos, setTorneos] = useState([]);

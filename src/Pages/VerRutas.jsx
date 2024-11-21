@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/Styles/VerRutas.css'; // Asegúrate de que la ruta del CSS sea correcta
+import axios from 'axios';
 
 export default function ListarRutas() {
   const [rutas, setRutas] = useState([]);

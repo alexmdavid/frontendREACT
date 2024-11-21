@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/Styles/VerPerfil.css'; 
+import axios from 'axios';
 
 export default function VerPerfil() {
   const [perfil, setPerfil] = useState({

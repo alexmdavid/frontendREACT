@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/Styles/Formularios.css'; 
+import axios from 'axios';
 
 export default function RegistrarTorneo() {
   const [nombre, setNombre] = useState('');

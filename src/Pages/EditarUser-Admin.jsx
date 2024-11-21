@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/Styles/ListarUsuarios.css';
+import axios from 'axios';
 
 export default function ListaUsuarios() {
   const [usuarios, setUsuarios] = useState([]);

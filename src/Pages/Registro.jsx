@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/Styles/Registro.css'; 
+import axios from 'axios';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -52,15 +53,27 @@ export default function Register() {
   };
 
   // Manejo del submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+  
     if (validateForm()) {
-      // Aquí iría la lógica de la API para enviar el formulario (por ejemplo, fetch o axios)
-      // Por ahora, solo redirigimos a la página de inicio
-      navigate('/home'); // Redirigir al inicio o cualquier página que desees
+      try {
+        const response = await axios.post('http://localhost:8080/api/usuarios', {
+          nombre,
+          apellido,
+          correo,
+          contrasena,
+        });
+  
+        alert(response.data); // Mensaje del servidor
+        navigate('/home'); // Redirigir al home
+      } catch (error) {
+        console.error('Error al registrar el usuario:', error);
+        alert('Hubo un problema al registrar el usuario');
+      }
     }
   };
+  
 
   return (
     <div className="container">

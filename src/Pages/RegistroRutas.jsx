@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/Styles/Formularios.css'; // Asegúrate de que la ruta de CSS sea correcta
+import axios from 'axios';
 
 export default function AgregarRuta() {
   const [nombreRuta, setNombreRuta] = useState('');

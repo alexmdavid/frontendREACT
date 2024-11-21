@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/Styles/Index.css';
+import axios from 'axios';
 
 export default function Index() {
     const navigate = useNavigate();
