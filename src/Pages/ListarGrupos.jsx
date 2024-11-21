@@ -11,8 +11,8 @@ export default function Grupos() {
     const fetchGrupos = async () => {
       try {
         // Aquí simulas la obtención de los grupos, puedes reemplazarlo por una llamada a tu API
-        const response = await fetch('/api/grupos'); // Reemplaza con la URL correcta
-        const data = await response.json();
+        const response = await axios.get('http://localhost:8080/api/grupo'); // Reemplaza con la URL correcta
+        const data = await response.data;
         setGrupos(data);
       } catch (error) {
         console.error('Error al obtener los grupos:', error);
@@ -58,9 +58,9 @@ export default function Grupos() {
           <tbody>
             {grupos.map((grupo) => (
               <tr key={grupo.idGrupo}>
-                <td>{grupo.nombre}</td>
-                <td>{grupo.descripcion}</td>
-                <td>{grupo.modalidad}</td>
+                <td className='celda-grupo'>{grupo.nombre}</td>
+                <td className='celda-grupo'>{grupo.descripcion}</td>
+                <td className='celda-grupo'>{grupo.modalidad}</td>
                 <td>
                   <button 
                     className="btn-unirse" 
