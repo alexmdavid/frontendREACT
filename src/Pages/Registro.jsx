@@ -14,7 +14,7 @@ export default function Register() {
     };
   }, []);
 
-  // Estado para los campos del formulario
+  
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [correo, setCorreo] = useState('');
@@ -23,16 +23,15 @@ export default function Register() {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  // Manejadores de cambio de los inputs
   const handleNombreChange = (e) => setNombre(e.target.value);
   const handleApellidoChange = (e) => setApellido(e.target.value);
   const handleCorreoChange = (e) => setCorreo(e.target.value);
   const handleContrasenaChange = (e) => setContrasena(e.target.value);
 
-  // Función para alternar la visibilidad de la contraseña
+ 
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
-  // Validación simple de correo y contraseña
+
   const validateForm = () => {
     let valid = true;
     if (!correo.includes('@')) {
@@ -55,7 +54,7 @@ export default function Register() {
   // Manejo del submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (validateForm()) {
       try {
         const response = await axios.post('http://localhost:8080/api/usuarios', {
@@ -65,12 +64,16 @@ export default function Register() {
           contrasena,
         });
   
-        alert(response.data); // Mensaje del servidor
-        navigate('/home'); // Redirigir al home
+        alert(response.data); 
+        navigate('/homeUser'); 
       } catch (error) {
         console.error('Error al registrar el usuario:', error);
-        alert('Hubo un problema al registrar el usuario');
+        alert('Hubo un problema al registrar el usuario '+ {error});
       }
+    }
+    else{
+      console.error('Error al registrar el usuario:', emailError ? emailError : passwordError);
+      alert(('Hubo un problema al registrar el usuario ',emailError) ? emailError : passwordError);
     }
   };
   
