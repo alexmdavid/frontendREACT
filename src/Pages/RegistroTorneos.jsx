@@ -10,42 +10,27 @@ export default function RegistrarTorneo() {
   const [patrocinadores, setPatrocinadores] = useState([]);
   const navigate = useNavigate();
 
-  // Cargar la lista de patrocinadores desde la API
-  useEffect(() => {
-    const fetchPatrocinadores = async () => {
-      try {
-        const response = await fetch('/api/patrocinadores'); // Cambia la URL por la que corresponda
-        const data = await response.json();
-        setPatrocinadores(data);
-      } catch (error) {
-        console.error('Error al obtener los patrocinadores:', error);
-      }
-    };
+  const [torneo, setTorneo] = useState({
+    nombre: '',
+    descripcion: '',
+  })
 
-    fetchPatrocinadores();
-  }, []);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setTorneo((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Construir el objeto del torneo
-    const torneo = {
-      nombre,
-      descripcion,
-      idPatrocinador,
-    };
-
-    // Enviar los datos al backend (se puede usar fetch para enviar el formulario)
     try {
-      const response = await fetch('/api/torneos', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(torneo),
-      });
+      const response = await axios.post('http://localhost:8080/api/torneos',torneo); 
 
-      if (response.ok) {
+      if (response.status=201) {
         // Redirigir a otra página o mostrar mensaje de éxito
         alert('Torneo registrado exitosamente');
         navigate('/torneos'); // Redirigir a la lista de torneos o donde desees
@@ -66,8 +51,8 @@ export default function RegistrarTorneo() {
             type="text"
             id="nombre"
             name="nombre"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
+            value={torneo.nombre}
+            onChange={handleChange}
             required
             placeholder="Ingrese el nombre del torneo"
           />
@@ -79,30 +64,14 @@ export default function RegistrarTorneo() {
             id="descripcion"
             name="descripcion"
             rows="4"
-            value={descripcion}
-            onChange={(e) => setDescripcion(e.target.value)}
+            value={torneo.descripcion}
+            onChange={handleChange}
             required
             placeholder="Describa el torneo"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="idPatrocinador">Patrocinador:</label>
-          <select
-            id="idPatrocinador"
-            name="idPatrocinador"
-            value={idPatrocinador}
-            onChange={(e) => setIdPatrocinador(e.target.value)}
-            required
-          >
-            <option value="">-- Seleccione un patrocinador --</option>
-            {patrocinadores.map((patrocinador) => (
-              <option key={patrocinador.id} value={patrocinador.id}>
-                {patrocinador.nombre}
-              </option>
-            ))}
-          </select>
-        </div>
+
 
         <button type="submit">Registrar Torneo</button>
       </form>
