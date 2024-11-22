@@ -9,6 +9,10 @@
     margin: 0;
     padding: 0;
   }
+
+  .celda-grupo{
+    color: #333;
+  }
   
   .listar-usuarios-container .container {
     width: 80%;
