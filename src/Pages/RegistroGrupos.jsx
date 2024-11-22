@@ -26,19 +26,36 @@ export default function AgregarGrupo() {
       const response = await axios.post('http://localhost:8080/api/grupos', formData );
 
       if (response.status == 201) {
-        alert('Grupo agregado exitosamente');
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Grupo agregado exitosamente",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        
         // Aquí puedes redirigir o limpiar el formulario si es necesario
         setFormData({
           nombre: '',
           descripcion: '',
           modalidad: ''
         });
+
+        navigate("./ListarGrupos");
       } else {
-        alert('Error al agregar el grupo');
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error al agregar el grupo",
+        });
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Error al enviar el formulario');
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: 'Error al enviar el formulario',
+      });
     }
   };
 

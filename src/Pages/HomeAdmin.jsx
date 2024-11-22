@@ -5,6 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import logo from '../assets/img/logo-bicicaribe.jpg';
+import image1 from '../assets/img/cerro-kennedy.jpg';
+import image2 from '../assets/img/minca.jpg';
+import image3 from '../assets/img/rio.jpg';
+
 
 export default function HomeUser() {
   const navigate = useNavigate();
@@ -32,7 +37,7 @@ export default function HomeUser() {
     <div>
       <header>
         <div className="logo">
-          <img src="./img/logo-bicicaribe.jpg" alt="Logo Bicicleta" className="zoom" />
+          <img src={ logo } alt="Logo Bicicleta" className="zoom" />
         </div>
         <div className="social-media">
           <a
@@ -40,14 +45,14 @@ export default function HomeUser() {
             href="https://www.facebook.com/profile.php?id=61569125060880&mibextid=ZbWKwL"
             target="_blank"
             rel="noopener noreferrer"
-          ></a>
+          ><FontAwesomeIcon icon={faFacebook}  /></a>
           <a
             className="fa-brands fa-instagram fa-xl"
             href="https://www.instagram.com/bici_caribe/?igsh=MWN6ZDM4b2VremhvaQ%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
-          ></a>
-          <a className="fa-brands fa-twitter fa-xl"></a>
+          ><FontAwesomeIcon icon={faInstagram} /></a>
+          <a className="fa-brands fa-twitter fa-xl"><FontAwesomeIcon icon={faTwitter} /></a>
         </div>
         <div className="auth-buttons">
           <button className="login-btn" onClick={() => navigate('/VerPerfil')}>
@@ -64,7 +69,7 @@ export default function HomeUser() {
 
           {/* Menú de Rutas */}
           <li className="dropdown">
-            <a href="#">RUTAS <i className="fa fa-chevron-down"></i></a>
+            <a href="#">RUTAS <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown} /></i></a>
             <ul className="dropdown-menu">
               <li><a onClick={() => navigate('/VerRutas')} href="#">Ver Ruta</a></li>
               <li><a onClick={() => navigate('/rutas/registrar')} href="#">Registrar Ruta</a></li>
@@ -73,7 +78,7 @@ export default function HomeUser() {
 
           {/* Menú de Grupos de Salida */}
           <li className="dropdown">
-            <a href="#">GRUPOS DE SALIDA <i className="fa fa-chevron-down"></i></a>
+            <a href="#">GRUPOS DE SALIDA <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown}/></i></a>
             <ul className="dropdown-menu">
               <li><a onClick={() => navigate('/grupos')} href="#">Ver Grupos</a></li>
               <li><a onClick={() => navigate('/grupos/registro')} href="#">Registrar Grupo</a></li>
@@ -82,7 +87,7 @@ export default function HomeUser() {
 
           {/* Menú de Torneos */}
           <li className="dropdown">
-            <a href="#">TORNEOS <i className="fa fa-chevron-down"></i></a>
+            <a href="#">TORNEOS <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown} /></i></a>
             <ul className="dropdown-menu">
               <li><a onClick={() => navigate('/torneos')} href="#">Ver Torneos</a></li>
               <li><a onClick={() => navigate('/registro/torneo')} href="#">Registrar Torneo</a></li>
@@ -103,17 +108,17 @@ export default function HomeUser() {
 
         <div className="routes">
           <div className="route-card">
-            <img src="./assets/img/cerro-kennedy.jpg" alt="Minca - Cerro Kennedy - Arimaca" className="zoom" />
+            <img src={image1} alt="Minca - Cerro Kennedy - Arimaca" className="zoom" />
             <h3>Minca - Cerro Kennedy - Arimaca</h3>
             <button onClick={() => handleRouteDetails('minca')}>Ver más</button>
           </div>
           <div className="route-card">
-            <img src="./assets/img/cerro-kennedy.jpg" alt="Minca - Cerro Kennedy" className="zoom" />
+            <img src={image2} alt="Minca - Cerro Kennedy" className="zoom" />
             <h3>Minca - Cerro Kennedy</h3>
             <button onClick={() => handleRouteDetails('cerro-kennedy')}>Ver más</button>
           </div>
           <div className="route-card">
-            <img src="./assets/img/rio.jpg" alt="Rio Frio" className="zoom" />
+            <img src={image3} alt="Rio Frio" className="zoom" />
             <h3>Rio Frio</h3>
             <button onClick={() => handleRouteDetails('rio-frio')}>Ver más</button>
           </div>

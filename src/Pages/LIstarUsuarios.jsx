@@ -59,7 +59,11 @@ export default function ListaUsuarios() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!idUsuario) {
-      alert("No se encontró el ID del usuario para actualizar.");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "No se encontró el ID del usuario para actualizar.",
+      });
       return;
     }
 
@@ -79,10 +83,18 @@ export default function ListaUsuarios() {
         );
         closeModal();
       } else {
-        alert("Error al actualizar el usuario");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error al actualizar el usuario",
+        });
       }
     } catch (error) {
-      console.error("Error al actualizar el usuario:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Error al actualizar el usuario",
+      });
     }
   };
 
@@ -92,7 +104,11 @@ export default function ListaUsuarios() {
         const response = await axios.get("http://localhost:8080/api/usuarios");
         setUsuarios(response.data);
       } catch (error) {
-        console.error("Error al obtener los usuarios:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error al obtener los usuarios",
+        });
       }
     };
     fetchUsuarios();
@@ -102,9 +118,19 @@ export default function ListaUsuarios() {
     try {
       await axios.delete(`http://localhost:8080/api/usuarios/${idusuario}`);
       setUsuarios(usuarios.filter((usuario) => usuario.idUsuario !== idusuario));
-      alert("Usuario eliminado correctamente");
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Usuario eliminado correctamente",
+        showConfirmButton: false,
+        timer: 1500
+      });
     } catch (error) {
-      console.error("Error al eliminar el usuario:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Error al obtener los usuarios",
+      });
     }
   };
 

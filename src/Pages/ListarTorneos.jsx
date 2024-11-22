@@ -42,12 +42,27 @@ export default function ListadoTorneos() {
 
       const response = await axios.post(`http://localhost:8080/api/usuarios/${usuario.idUsuario}/torneos/${idTorneo}/inscribir`, formData);
       if (response.status === 200) {
-        alert("Inscripción exitosa");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Inscripción exitosa",
+          showConfirmButton: false,
+          timer: 1500
+        });
       } else {
         console.error("Error al inscribirse al torneo:", response.data);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error al inscribirse al torneo",
+        });
       }
     } else {
-      console.log("No se encontró usuario en localStorage");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "No se encontró usuario en localStorage",
+      });
     }
 
  

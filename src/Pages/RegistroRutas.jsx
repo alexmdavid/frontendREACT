@@ -4,38 +4,55 @@ import '../assets/Styles/Formularios.css'; // Asegúrate de que la ruta de CSS s
 import axios from 'axios';
 
 export default function AgregarRuta() {
-  const [nombreRuta, setNombreRuta] = useState('');
-  const [descripcion, setDescripcion] = useState('');
+
   const navigate = useNavigate();
+
+  // Construir el objeto de la ruta
+  const[ruta, setRUta]= useState({
+  nombreRuta:"",
+  descripcion:""
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setRUta((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Construir el objeto de la ruta
-    const ruta = {
-      nombreRuta,
-      descripcion,
-    };
-
     // Enviar los datos al backend
     try {
-      const response = await fetch('/api/rutas', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(ruta),
-      });
+      const response = await axios.post('http://localhost:8080/api/rutas', ruta);
 
-      if (response.ok) {
+      if (response.status =201) {
         // Redirigir al usuario o mostrar un mensaje de éxito
-        alert('Ruta agregada exitosamente');
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Ruta agregada exitosamente",
+          showConfirmButton: false,
+          timer: 1500
+        });
         navigate('/rutas'); // Cambia la ruta de redirección si es necesario
       } else {
-        alert('Hubo un error al agregar la ruta');
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Hubo un error al agregar la ruta",
+        });
       }
     } catch (error) {
       console.error('Error al agregar la ruta:', error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Hubo un error al conectar con el backend",
+      });
     }
   };
 
@@ -43,13 +60,13 @@ export default function AgregarRuta() {
     <div className="agregar-ruta-container">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="nombreRuta">Nombre de la Ruta:</label>
+          <label htmlFor="nombreRuta">nombreRuta de la Ruta:</label>
           <input
             type="text"
             id="nombreRuta"
             name="nombreRuta"
-            value={nombreRuta}
-            onChange={(e) => setNombreRuta(e.target.value)}
+            value={ruta.nombreRuta}
+            onChange={handleChange}
             required
           />
         </div>
@@ -59,8 +76,8 @@ export default function AgregarRuta() {
           <textarea
             id="descripcion"
             name="descripcion"
-            value={descripcion}
-            onChange={(e) => setDescripcion(e.target.value)}
+            value={ruta.descripcion}
+            onChange={handleChange}
             required
           />
         </div>

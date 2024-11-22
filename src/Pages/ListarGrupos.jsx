@@ -20,7 +20,11 @@ export default function Grupos() {
         const data = await response.data;
         setGrupos(data);
       } catch (error) {
-        console.error("Error al obtener los grupos:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error al obtener los grupos",
+        });
       } finally {
         setLoading(false);
       }
@@ -42,12 +46,27 @@ export default function Grupos() {
 
       const response = await axios.post(`http://localhost:8080/api/usuarios/${usuario.idUsuario}/grupos/${idGrupo}/inscribir`, formData);
       if (response.status === 200) {
-        alert("Inscripción exitosa");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Inscripción exitosa",
+          showConfirmButton: false,
+          timer: 1500
+        });
       } else {
-        console.error("Error al inscribirse al grupo:", response.data);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error al inscribirse al grupo",
+        });
       }
     } else {
       console.log("No se encontró usuario en localStorage");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "No se encontró usuario en localStorage",
+      });
     }
 
  

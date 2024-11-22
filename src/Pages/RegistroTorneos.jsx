@@ -32,13 +32,28 @@ export default function RegistrarTorneo() {
 
       if (response.status=201) {
         // Redirigir a otra página o mostrar mensaje de éxito
-        alert('Torneo registrado exitosamente');
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Torneo registrado exitosamente",
+          showConfirmButton: false,
+          timer: 1500
+        });
         navigate('/torneos'); // Redirigir a la lista de torneos o donde desees
       } else {
-        alert('Hubo un error al registrar el torneo');
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Hubo un error al agregar el torneo",
+        });
       }
     } catch (error) {
       console.error('Error al registrar el torneo:', error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Hubo un error al agregar el torneo",
+      });
     }
   };
 

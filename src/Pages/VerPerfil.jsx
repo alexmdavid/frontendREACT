@@ -30,11 +30,20 @@ export default function VerPerfil() {
             setPerfil(data);
             console.log("Perfil obtenido:", data);
           } else {
-            console.error("Error al obtener el perfil");
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Error al obtener el perfil",
+            });
           }
         }
       } catch (error) {
         console.error("Error en la solicitud:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error en la solicitud",
+        });
       }
     };
 
@@ -61,17 +70,35 @@ export default function VerPerfil() {
           const response = await axios.put(`http://localhost:8080/api/usuarios/${idUsuario}`,perfil);
 
           if (response.status==200) {
-            alert("Perfil actualizado correctamente");
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Perfil actualizado correctamente",
+              showConfirmButton: false,
+              timer: 1500
+            });
             navigate("/verPerfil"); // Redirigir a la página de perfil después de la actualización
           } else {
-            alert("Hubo un problema al actualizar el perfil");
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Hubo un problema al actualizar el perfil",
+            });
           }
         }else{
-          alerta("Se encontro un error");
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Se encontro un error",
+          });
           return;
         }
     } catch (error) {
-      console.error("Error al actualizar el perfil:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Error al actualizar el perfil",
+      });
     }
   };
 

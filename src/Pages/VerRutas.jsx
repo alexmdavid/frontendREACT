@@ -14,10 +14,19 @@ export default function ListarRutas() {
           const data = await response.json();
           setRutas(data); // Actualizamos el estado con la lista de rutas
         } else {
-          console.error('Error al obtener las rutas');
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Hubo un error al btener las rutas",
+          });
         }
       } catch (error) {
         console.error('Error en la solicitud:', error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error en la solicitud",
+        });
       }
     };
 
