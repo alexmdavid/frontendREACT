@@ -36,7 +36,7 @@ export default function Login() {
     console.log(formData);
     console.log(response.statusCode )
       if (response.status === 200) {
-        localStorage.setItem('token', response.data.token); 
+        localStorage.setItem('usuario', JSON.stringify(response.data)); 
         setSuccess(true); 
       }
     } catch (error) {
