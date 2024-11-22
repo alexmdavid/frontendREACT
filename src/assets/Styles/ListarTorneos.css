@@ -53,6 +53,9 @@
     color: white;
     font-weight: bold;
   }
+  .celda-grupo{
+    color: #333;
+  }
   
   .torneos-container tbody tr:nth-child(even) {
     background-color: #f9f9f9;
