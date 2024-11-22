@@ -8,7 +8,7 @@ export default function VerPerfil() {
     nombre: "",
     apellido: "",
     sexo: "",
-    tipoSangre: "",
+    tipoDeSangre: "",
   });
 
   const navigate = useNavigate();
@@ -54,27 +54,29 @@ export default function VerPerfil() {
 
     // Enviar los datos al backend para actualizar el perfil
     try {
-      const response = await fetch("/api/usuario/actualizarPerfil", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(perfil),
-      });
+      const usuarioString = localStorage.getItem("usuario"); // Recupera el string del usuario en localStorage
+        if (usuarioString) {
+          const usuario = JSON.parse(usuarioString); // Convierte el string a un objeto
+          const idUsuario = usuario.idUsuario;
+          const response = await axios.put(`http://localhost:8080/api/usuarios/${idUsuario}`,perfil);
 
-      if (response.ok) {
-        alert("Perfil actualizado correctamente");
-        navigate("/perfil"); // Redirigir a la página de perfil después de la actualización
-      } else {
-        alert("Hubo un problema al actualizar el perfil");
-      }
+          if (response.status==200) {
+            alert("Perfil actualizado correctamente");
+            navigate("/verPerfil"); // Redirigir a la página de perfil después de la actualización
+          } else {
+            alert("Hubo un problema al actualizar el perfil");
+          }
+        }else{
+          alerta("Se encontro un error");
+          return;
+        }
     } catch (error) {
       console.error("Error al actualizar el perfil:", error);
     }
   };
 
-  const obtenerTipoSangre = () => {
-    switch (perfil.tipoSangre) {
+  const obtenertipoDeSangre = () => {
+    switch (perfil.tipoDeSangre) {
       case "O+":
         return "O+";
       case "O-":
@@ -143,11 +145,11 @@ export default function VerPerfil() {
         </div>
 
         <div className="input-group">
-          <label htmlFor="tipoSangre">Tipo de Sangre</label>
+          <label htmlFor="tipoDeSangre">Tipo de Sangre</label>
           <select
-            value={perfil.tipoSangre === "" || perfil.tipoSangre === null ? "" : perfil.tipoSangre}
+            value={perfil.tipoDeSangre === "" || perfil.tipoDeSangre === null ? "" : perfil.tipoDeSangre}
             onChange={handleChange}
-            name="tipoSangre"
+            name="tipoDeSangre"
           >
             <option value="">Sin definir</option>
             <option value="O+">O+</option>
