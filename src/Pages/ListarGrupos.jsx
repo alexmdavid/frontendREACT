@@ -16,7 +16,7 @@ export default function Grupos() {
     const fetchGrupos = async () => {
       try {
         // Aquí simulas la obtención de los grupos, puedes reemplazarlo por una llamada a tu API
-        const response = await axios.get("http://localhost:8080/api/grupo"); // Reemplaza con la URL correcta
+        const response = await axios.get("http://localhost:8080/api/grupos"); // Reemplaza con la URL correcta
         const data = await response.data;
         setGrupos(data);
       } catch (error) {
