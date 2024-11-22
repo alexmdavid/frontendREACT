@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function AgregarGrupo() {
   const [formData, setFormData] = useState({
-    nombreGrupo: '',
+    nombre: '',
     descripcion: '',
     modalidad: ''
   });
@@ -23,19 +23,13 @@ export default function AgregarGrupo() {
     e.preventDefault();
     try {
       // Reemplaza la URL por la correcta de tu backend
-      const response = await fetch('/api/grupos', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post('http://localhost:8080/api/grupos', formData );
 
-      if (response.ok) {
+      if (response.status == 201) {
         alert('Grupo agregado exitosamente');
         // Aquí puedes redirigir o limpiar el formulario si es necesario
         setFormData({
-          nombreGrupo: '',
+          nombre: '',
           descripcion: '',
           modalidad: ''
         });
@@ -56,8 +50,8 @@ export default function AgregarGrupo() {
           <input
             type="text"
             id="nombreGrupo"
-            name="nombreGrupo"
-            value={formData.nombreGrupo}
+            name="nombre"
+            value={formData.nombre}
             onChange={handleChange}
             required
           />
