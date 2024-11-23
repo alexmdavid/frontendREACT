@@ -18,7 +18,8 @@ export default function Index() {
         <div className="container">
             <header>
                 <h1>Bienvenido a BiciCaribe</h1>
-                <p>La comunidad de amantes de la bicicleta en el Caribe.</p>
+                <br />
+                <p>La comunidad de amantes del ciclismo en el Caribe.</p>
             </header>
 
             <nav>

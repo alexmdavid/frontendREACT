@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 export default function Login() {
   const [formData, setFormData] = useState({
     correo: '',
-    contrasena: ''
+    contrasena: '',
+    id: '',
   });
 
   const [error, setError] = useState(null);
@@ -47,7 +48,7 @@ export default function Login() {
   
 
   if (success) {
-    return navigate("/HomeAdmin");
+    return navigate("/Home");
   }
 
   return (

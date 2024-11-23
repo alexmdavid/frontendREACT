@@ -9,7 +9,7 @@ export default function AgregarGrupo() {
     modalidad: ''
   });
 
-  // Maneja los cambios en los campos del formulario
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -34,7 +34,7 @@ export default function AgregarGrupo() {
           timer: 1500
         });
         
-        // Aquí puedes redirigir o limpiar el formulario si es necesario
+      
         setFormData({
           nombre: '',
           descripcion: '',

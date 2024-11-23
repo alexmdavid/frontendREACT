@@ -11,7 +11,7 @@ import image2 from '../assets/img/minca.jpg';
 import image3 from '../assets/img/rio.jpg';
 
 
-export default function HomeUser() {
+export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +23,9 @@ export default function HomeUser() {
     };
   }, []);
 
+  let user = localStorage.getItem("usuario");
+  user = JSON.parse(user);
+
   // Función para redirigir al perfil
   const handleProfileRedirect = () => {
     navigate('/profile'); // Cambia la ruta a la que quieras redirigir al perfil
@@ -30,7 +33,7 @@ export default function HomeUser() {
 
   // Función para ver las rutas, grupos o torneos (más detalles)
   const handleRouteDetails = (routeName) => {
-    navigate(`/rutas/${routeName}`);
+    navigate(`/${routeName}`);
   };
 
   return (
@@ -69,16 +72,19 @@ export default function HomeUser() {
 
           {/* Menú de Rutas */}
           <li className="dropdown">
-            <a href="#">RUTAS <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown} /></i></a>
-            <ul className="dropdown-menu">
-              <li><a onClick={() => navigate('/VerRutas')} href="#">Ver Ruta</a></li>
-              <li><a onClick={() => navigate('/rutas/registrar')} href="#">Registrar Ruta</a></li>
-            </ul>
+            <a onClick={() => handleRouteDetails('VerRutas')} >RUTAS 
+            { user.idRol !=5 ? "":  <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown} /></i>}
+            </a>
+            { user.idRol !=5 ? "" : (
+                <ul className="dropdown-menu">
+                  <li><a onClick={() => navigate('/VerRutas')} href="#">Ver Ruta</a></li>
+                  <li><a onClick={() => navigate('/rutas/registrar')} href="#">Registrar Ruta</a></li>
+                </ul> ) }
           </li>
 
           {/* Menú de Grupos de Salida */}
           <li className="dropdown">
-            <a href="#">GRUPOS DE SALIDA <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown}/></i></a>
+            <a onClick={() => navigate('/grupos')} >GRUPOS DE SALIDA <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown}/></i></a>
             <ul className="dropdown-menu">
               <li><a onClick={() => navigate('/grupos')} href="#">Ver Grupos</a></li>
               <li><a onClick={() => navigate('/grupos/registro')} href="#">Registrar Grupo</a></li>
@@ -87,14 +93,18 @@ export default function HomeUser() {
 
           {/* Menú de Torneos */}
           <li className="dropdown">
-            <a href="#">TORNEOS <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown} /></i></a>
+            <a onClick={() => handleRouteDetails('torneos')}>TORNEOS 
+            { user.idRol !=5 ? "": <i className="fa fa-chevron-down"><FontAwesomeIcon icon={faChevronDown} /></i> }
+            </a>
+            
+            { user.idRol !=5 ? "": (
             <ul className="dropdown-menu">
-              <li><a onClick={() => navigate('/torneos')} href="#">Ver Torneos</a></li>
+              <li><a onClick={() => navigate('/ListarTorneos')} href="#">Ver Torneos</a></li>
               <li><a onClick={() => navigate('/registro/torneo')} href="#">Registrar Torneo</a></li>
-            </ul>
+            </ul> )}
           </li>
 
-          <li><a onClick={() => navigate('/usuarios')} href="#">VER USUARIOS</a></li>
+          {user.idRol !=5 ? "" : <li><a onClick={() => navigate('/usuarios')} href="#">VER USUARIOS</a></li>}
           <li><a onClick href="https://wa.me/+573045853090/">CONTACTANOS</a></li>
           <li><a onClick href="https://laberinto-bicicaribe.vercel.app/">JUEGO</a> </li>
         </ul>

@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import Index from './Pages/Index';
 import Login from './Pages/Login';
-import HomeUser from './Pages/HomeUser';
-import HomeAdmin from './Pages/HomeAdmin';
+import Home from './Pages/Home';
 import Registro from './Pages/Registro';
 import Grupos from './Pages/ListarGrupos';
 import RegistroGrupos from './Pages/RegistroGrupos';
@@ -23,8 +22,7 @@ function App() {
         {/* Define las rutas de tu aplicación */}
         <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/HomeUser" element={<HomeUser />} />
-        <Route path='/HomeAdmin' element={<HomeAdmin/>} />
+        <Route path="/Home" element={<Home />} />
         <Route path='/registro' element={<Registro/>} />
         <Route path='/grupos' element={<Grupos/>} />
         <Route path='/grupos/registro' element={<RegistroGrupos/>} />

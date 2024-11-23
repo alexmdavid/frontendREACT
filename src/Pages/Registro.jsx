@@ -65,7 +65,7 @@ export default function Register() {
         );
 
         if (response.status == 200 || response.status == 201) {
-          navigate("/homeUser");
+          navigate("/home");
           Swal.fire({
             position: "top-end",
             icon: "success",
