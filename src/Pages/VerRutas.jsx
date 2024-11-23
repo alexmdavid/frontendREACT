@@ -9,10 +9,10 @@ export default function ListarRutas() {
     // Función para obtener las rutas del backend
     const obtenerRutas = async () => {
       try {
-        const response = await fetch('/api/rutas', { method: 'GET' });
-        if (response.ok) {
-          const data = await response.json();
-          setRutas(data); // Actualizamos el estado con la lista de rutas
+        const response = await axios.get('http://localhost:8080/api/rutas')
+        if (response.status == 200) {
+          const data = await response.data;
+          setRutas(data); 
         } else {
           Swal.fire({
             icon: "error",
